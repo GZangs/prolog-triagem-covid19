@@ -24,7 +24,7 @@ sao2(jose, 99).
 sao2(maria, 99).
 
 dispneia(jose, "Sim").
-dispneia(maria, "N�o").
+dispneia(maria, "Não").
 
 
 %Regras
@@ -51,7 +51,7 @@ paciente_leve_medio(P):-
     (   freq_cardiaca(P, FREQ_CARD), FREQ_CARD > 100);
     (   freq_respiratoria(P, FREQ_RESP), freq_respiratoria_leve_medio(FREQ_RESP));
     (   pa_sistolica(P, PA_SISTOLICA), pa_sistolica_leve_medio(PA_SISTOLICA));
-    (   dispneia(P, DISPNEIA), DISPNEIA = "N�o");
+    (   dispneia(P, DISPNEIA), DISPNEIA = "Não");
     (   idade(P, IDADE), IDADE >= 60);
     (   qtd_comorbidades(P, QTD_COMORBIDADES),QTD_COMORBIDADES >= 1).
 
@@ -61,7 +61,7 @@ diagnostico_grave(P):-
 
 diagnostico_leve_medio(P):-
     paciente_leve_medio(P),
-    write("Leve/M�dio: deve ficar em casa, em observa��o por 14 dias.").
+    write("Leve/Médio: deve ficar em casa, em observação por 14 dias.").
 
 testar_paciente(P) :-
     diagnostico_grave(P);
